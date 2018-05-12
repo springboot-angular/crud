@@ -40,8 +40,11 @@ public class PessoaEndereco implements Serializable {
 	@Column(name = "REFERENCIA")
 	private String referencia;
 
+	@Column(name = "CIDADE")
+	private String cidade;
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PESSOA_ID")
+	@JoinColumn(name = "PESSOA_ID", insertable = true, updatable = true)
 	private Pessoa pessoa;
 
 	public PessoaEndereco() {
@@ -101,6 +104,14 @@ public class PessoaEndereco implements Serializable {
 
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	public Pessoa getPessoa() {

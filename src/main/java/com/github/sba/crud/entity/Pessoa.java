@@ -27,16 +27,13 @@ public class Pessoa implements Serializable {
 	@Column(name = "NOME")
 	private String nome;
 
-	@OneToMany(mappedBy = "pessoa", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.REFRESH })
+	@OneToMany(mappedBy = "pessoa", fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
 	private Set<PessoaEndereco> endereco;
 
-	@ManyToMany(mappedBy = "pessoas", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.REFRESH })
+	@ManyToMany(mappedBy = "pessoas", fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
 	private Set<Escolaridade> escolaridades;
 
-	@ManyToMany(mappedBy = "pessoas", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.REFRESH })
+	@ManyToMany(mappedBy = "pessoas", fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
 	private Set<Certificacao> certificacoes;
 
 	public Pessoa() {

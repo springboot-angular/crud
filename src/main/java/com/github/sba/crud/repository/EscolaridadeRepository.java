@@ -1,12 +1,10 @@
 package com.github.sba.crud.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
-
-import com.cosium.spring.data.jpa.entity.graph.repository.EntityGraphQueryDslPredicateExecutor;
+import com.cosium.spring.data.jpa.entity.graph.repository.EntityGraphJpaRepository;
+import com.cosium.spring.data.jpa.entity.graph.repository.EntityGraphQuerydslPredicateExecutor;
 import com.github.sba.crud.entity.Escolaridade;
 
-public interface EscolaridadeRepository extends JpaRepository<Escolaridade, Long>,
-		QueryDslPredicateExecutor<Escolaridade>, EntityGraphQueryDslPredicateExecutor<Escolaridade> {
+public interface EscolaridadeRepository
+		extends EntityGraphJpaRepository<Escolaridade, Long>, EntityGraphQuerydslPredicateExecutor<Escolaridade> {
 
 }
